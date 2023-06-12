@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Application Details
 |               |
 | ------------- |
@@ -40,3 +41,6 @@ A Fiori application.
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+=======
+# SAP-Fiori-Internship
+>>>>>>> 28ce5ca2e1a30f162bce546fb79549a04815c9be
