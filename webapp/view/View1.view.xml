@@ -1,0 +1,59 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project1.controller.View1" displayBlock="true">
+    <App id="appp">
+        <Page id="page">
+            <headerContent>
+                <ObjectHeader id="oh1" title="{i18n>title}" />
+            </headerContent>
+            <Table id="Table1" items="{/ZI_ORDER_BACKEND}" growing="true" growingThreshold="25" growingDirection="Downwards">
+                <headerToolbar>
+                    <OverflowToolbar id="tb">
+                        <Title text="{i18n>tableTitle}" id="txt" />
+                        <ToolbarSpacer id="tbspcr0" />
+                        <Button text="Create" icon="sap-icon://create-form" press="onCreate" />
+                        <Button text="Overview" tooltip="Test"  id="b2" icon="sap-icon://org-chart" press="onOrderCount"/>
+                        <Button text="Favorites" tooltip="Test"  id="b3" icon="sap-icon://org-chart" press="onToFavorites"/>
+                        <SearchField width="20%" id="s0" search="onSearch" value="" />
+                        <Button tooltip="Sort" id="b0" icon="sap-icon://sort" press="onSort" />
+                        <Button tooltip="Group" id="b1" icon="sap-icon://group-2" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="c1">
+                        <Text text="MaintenanceOrder" id="t1" />
+                    </Column>
+                    <Column id="c3">
+                        <Text text="Created By" id="t3" />
+                    </Column>
+                    <Column id="c2">
+                        <Text text="Material" id="t2" />
+                    </Column>
+                    <Column id="c6" >
+                        <Text text="Equipment" id="t6" />
+                    </Column>
+                    <Column id="c7">
+                        <Text text="Serial Number" id="t7" />
+                    </Column>
+                    <Column id="c4">
+                        <Text text="Creation Date" id="t4" />
+                    </Column>
+                    <Column id="c5">
+                        <Text text="Company Code" id="t5" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" id="cli" press="onOrderClick">
+                        <cells>
+                            <Text text="{MaintenanceOrder}" id="tt" />
+                            <Text text="{CreatedByUser}" id="tt2" />
+                            <Text text="{Material}" id="tt1" />
+                            <Text text="{Equipment}" id="tt6" />
+                            <Text text="{SerialNumber}" id="tt7" />
+                            <Text text="{CreationDate}" id="tt3" />
+                            <Text text="{CompanyCode}" id="tt4" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </Page>
+    </App>
+</mvc:View>

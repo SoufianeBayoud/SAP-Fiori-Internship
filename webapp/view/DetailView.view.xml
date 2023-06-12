@@ -1,0 +1,25 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project1.controller.DetailView" displayBlock="true">
+  <Shell id="shell">
+    <App id="app">
+      <VBox id="vb" class="customDetailView">
+        <Button icon="sap-icon://nav-back" press="onNavBack" />
+        <ObjectHeader id="oh" title="" />
+        <ObjectAttribute class="detailViewAttribute" id="MaintenanceOrder_Text" title="MaintenanceOrder" text="" />
+        <ObjectAttribute class="detailViewAttribute" title="Work Center Internal ID" id="WorkCenterInternalID" text="Work Center Internal ID" />
+        <ObjectAttribute class="detailViewAttribute" title="Business Area" id="BusinessArea" text="BusinessArea" />
+        <ObjectAttribute class="detailViewAttribute" title="Functional Area" id="FunctionalArea" />
+        <ObjectAttribute class="detailViewAttribute" title="Profit Center" id="ProfitCenter" text="ProfitCenter" />
+        <ObjectAttribute class="detailViewAttribute" title="Created By User" id="CreatedByUser" text="CreatedByUser" />
+        <ObjectAttribute class="detailViewAttribute" title="Creation Date" id="CreationDate" text="CreationDate" />
+        <ObjectAttribute class="detailViewAttribute" title="Material" id="Material" text="Material" />
+        <ObjectAttribute class="detailViewAttribute" title="Equipment" id="Equipment" text="Equipment" />
+        <ObjectAttribute class="detailViewAttribute" title="Serial Number" id="SerialNumber" text="SerialNumber" />
+        <ObjectAttribute class="detailViewAttribute" title="Company Code" id="CompanyCode" text="CompanyCode" />
+        <HBox id="hboxbtn" >
+        <Button text="Export to Excel File" icon="sap-icon://pdf-attachment" press="onExport"/>
+        <Button text="Add to Favorites" icon="sap-icon://favorite" press="onAddToFavorites"/>
+        </HBox>
+      </VBox>
+    </App>
+  </Shell>
+</mvc:View>

@@ -1,0 +1,200 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "project1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.9.6",
+      "toolsId": "1b65372f-8510-4227-813b-8a78c1e0f485"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUI_ORDER_BACKEND/",
+        "type": "OData",
+        "settings": {
+          "annotations": ["ZUI_ORDER_BACKEND", "annotation"],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZUI_ORDER_BACKEND": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_ORDER_BACKEND',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/ZUI_ORDER_BACKEND.xml"
+        }
+      },
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.114.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {},
+        "sap.ui.integration": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "project1.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [{
+        "uri": "css/style.css"
+      }]
+    },
+    "annotations": {
+      "ZUI_ORDER_BACKEND": {
+        "type": "ODataAnnotation",
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_ORDER_BACKEND',Version='0001')/$value/"
+      },
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "async": true,
+        "bypassed": {
+          "target": "notFound"
+        },
+        "viewPath": "project1.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [{
+        "name": "RouteView1",
+        "pattern": "",
+        "target": [
+          "TargetView1"
+        ]
+      }, {
+        "name": "Detail",
+        "pattern": "detail/{MaintenanceOrder}",
+        "target": ["TargetDetail"]
+      }, {
+        "name": "CountOrder",
+        "pattern": "countorder",
+        "target": ["TargetCount"]
+      }, {
+        "name": "Create",
+        "pattern": "create",
+        "target": ["TargetCreate"]
+      }, {
+        "name": "FavoritesView",
+        "pattern": "favoritesView",
+        "target": ["TargetFavorites"]
+      }],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        },
+        "TargetDetail": {
+          "viewType": "XML",
+          "viewName": "DetailView",
+          "viewId": "DetailView"
+        },
+        "notFound": {
+          "id": "notFound",
+          "name": "NotFound",
+          "transition": "show"
+        },
+        "TargetCount": {
+          "viewType": "XML",
+          "viewName": "CountOrder",
+          "viewId": "CountOrder"
+        },
+        "TargetCreate": {
+          "viewType": "XML",
+          "viewName": "Create",
+          "viewId": "Create"
+        },
+        "TargetFavorites": {
+          "viewType": "XML",
+          "viewName": "FavoritesView",
+          "viewId": "favoritesView"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "project1.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.viewExtensions": {
+          "project1.view.CountOrder": {
+            "PanelExtension": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "project1.view.Panel",
+              "type": "XML"
+            }
+          }
+        }
+      }
+    }
+  }
+}

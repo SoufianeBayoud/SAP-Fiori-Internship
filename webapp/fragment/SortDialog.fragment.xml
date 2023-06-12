@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+
+  <ViewSettingsDialog confirm="onSortDialogConfirm">
+
+    <sortItems>
+
+      <ViewSettingsItem selected="true" key="MaintenanceOrder" text="Notification Text" />
+
+
+    </sortItems>
+
+  </ViewSettingsDialog>
+
+</core:FragmentDefinition>

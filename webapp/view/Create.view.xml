@@ -1,0 +1,10 @@
+<mvc:View controllerName="project1.controller.Create" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.layout.form" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield" xmlns:core="sap.ui.core">
+  <smartForm:SmartForm id="createOrderForm" editable="true" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsS="1">
+    <!-- User -->
+    <smartForm:Group label="{i18n>appDescription}">
+      <smartForm:GroupElement>
+        <smartField:SmartField value="{path: '/User'}" />
+      </smartForm:GroupElement>
+    </smartForm:Group>
+  </smartForm:SmartForm>
+</mvc:View>

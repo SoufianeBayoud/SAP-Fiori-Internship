@@ -1,0 +1,35 @@
+<mvc:View id="viewId" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project1.controller.FavoritesView" displayBlock="true">
+  <Table id="FavTable" items="{path: '/'}">
+    <headerToolbar>
+      <OverflowToolbar id="tb12">
+        <Button icon="sap-icon://nav-back" press="onNavBack" />
+        <Title text="{i18n>tableTitle}" id="txt" />
+        <ToolbarSpacer id="tbspcr" />
+      <Button text="Synchronize" icon="sap-icon://synchronize" press="onClickSynchronize" />
+
+      </OverflowToolbar>
+
+    </headerToolbar>
+    <!-- Define your table columns and bindings -->
+    <columns>
+      <Column>
+        <Text text="Maintenance Order" />
+      </Column>
+      <Column>
+        <Text text="Created By User" />
+      </Column>
+      <Column>
+        <Text text="Creation Date" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem>
+        <cells>
+          <ObjectIdentifier title="{maintenanceOrder}" />
+          <ObjectIdentifier title="{createdByUser}" />
+          <ObjectIdentifier title="{creationDate}" />
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
+</mvc:View>

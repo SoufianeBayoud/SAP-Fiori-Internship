@@ -1,0 +1,25 @@
+/* Enter your custom styles here */
+.customDetailView {
+    margin: 16px;
+  }
+  
+  .detailViewAttribute {
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #555555;
+  }
+/* 
+  .autoHeightWidth {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+  } */
+
+.labelTotalOrders {
+  font-size: 80px;
+  font-style: normal;
+  color:black;
+  
+
+}
